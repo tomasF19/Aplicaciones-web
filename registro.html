@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - Vivero Raíz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Vivero Raíz</h1>
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <span id="zonaUsuario"><a href="login.html" class="boton">Ingresar</a></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login">
+      <h2>Crear cuenta</h2>
+      <form id="formRegistro" novalidate>
+        <div id="errores" class="mensaje-error"></div>
+
+        <fieldset>
+          <legend>Datos personales</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre">
+
+          <label for="correo">Correo:</label>
+          <input type="email" id="correo" name="correo">
+        </fieldset>
+
+        <fieldset>
+          <legend>Contraseña</legend>
+          <label for="clave">Contraseña:</label>
+          <input type="password" id="clave" name="clave">
+
+          <label for="clave2">Repetir contraseña:</label>
+          <input type="password" id="clave2" name="clave2">
+        </fieldset>
+
+        <label for="terminos">
+          <input type="checkbox" id="terminos" name="terminos">
+          Acepto los términos y condiciones
+        </label>
+
+        <button type="submit">Registrarme</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Vivero Raíz &copy; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/validaciones.js"></script>
+</body>
+</html>

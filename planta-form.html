@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planta (intranet) - Vivero Raíz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-protegida="si">
+  <header class="header">
+    <h1>Vivero Raíz</h1>
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <span id="zonaUsuario"><a href="login.html" class="boton">Ingresar</a></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intranet">
+      <h2 id="tituloForm">Nueva planta</h2>
+      <form id="formPlanta" novalidate>
+        <div id="errores" class="mensaje-error"></div>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+
+        <label for="nombreCientifico">Nombre científico:</label>
+        <input type="text" id="nombreCientifico" name="nombreCientifico">
+
+        <label for="categoria">Categoría:</label>
+        <select id="categoria" name="categoria">
+          <option value="">Elegir...</option>
+          <option value="interior">Interior</option>
+          <option value="exterior">Exterior</option>
+          <option value="suculenta">Suculenta</option>
+          <option value="aromática">Aromática</option>
+        </select>
+
+        <fieldset>
+          <legend>Luz</legend>
+          <label><input type="radio" name="luz" value="sol pleno"> Sol pleno</label>
+          <label><input type="radio" name="luz" value="media sombra"> Media sombra</label>
+          <label><input type="radio" name="luz" value="sombra"> Sombra</label>
+        </fieldset>
+
+        <label for="riego">Riego:</label>
+        <select id="riego" name="riego">
+          <option value="">Elegir...</option>
+          <option value="bajo">Bajo</option>
+          <option value="medio">Medio</option>
+          <option value="alto">Alto</option>
+        </select>
+
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01">
+
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" name="stock" step="1">
+
+        <label for="fechaIngreso">Fecha de ingreso:</label>
+        <input type="date" id="fechaIngreso" name="fechaIngreso">
+
+        <label for="aptaMascotas">
+          <input type="checkbox" id="aptaMascotas" name="aptaMascotas">
+          Apta para mascotas
+        </label>
+
+        <fieldset>
+          <legend>Etiquetas</legend>
+          <label><input type="checkbox" name="etiquetas" value="purificadora"> Purificadora</label>
+          <label><input type="checkbox" name="etiquetas" value="floración"> Floración</label>
+          <label><input type="checkbox" name="etiquetas" value="colgante"> Colgante</label>
+          <label><input type="checkbox" name="etiquetas" value="resistente"> Resistente</label>
+        </fieldset>
+
+        <label for="foto">Foto (URL o ruta):</label>
+        <input type="text" id="foto" name="foto" placeholder="img/helecho.jpg">
+
+        <label for="notas">Notas de cuidado:</label>
+        <textarea id="notas" name="notas" rows="4"></textarea>
+
+        <button type="submit">Guardar</button>
+        <a class="boton" href="listado.html">Cancelar</a>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Vivero Raíz &copy; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/planta-form.js"></script>
+</body>
+</html>

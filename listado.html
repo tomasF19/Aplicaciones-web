@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intranet - Vivero Raíz</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-protegida="si">
+  <header class="header">
+    <h1>Vivero Raíz</h1>
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav" id="menu">
+      <a href="index.html">Home</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="contacto.html">Contacto</a>
+      <span id="zonaUsuario"><a href="login.html" class="boton">Ingresar</a></span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intranet">
+      <h2>Intranet: listado de plantas</h2>
+
+      <div class="barra-acciones">
+        <a class="boton" href="planta-form.html">Nueva planta</a>
+        <button type="button" class="boton" id="restablecer">Restablecer datos</button>
+      </div>
+
+      <p id="estadoListado"></p>
+
+      <div class="tabla-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPlantas"></tbody>
+        </table>
+      </div>
+
+      <div class="grafico">
+        <h3>Stock por categoría</h3>
+        <canvas id="graficoStock"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Vivero Raíz &copy; 2026</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/listado.js"></script>
+</body>
+</html>

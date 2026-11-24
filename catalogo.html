@@ -9,55 +9,62 @@
 <body>
   <header class="header">
     <h1>Vivero Raíz</h1>
-    <nav class="nav">
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav" id="menu">
       <a href="index.html">Home</a>
       <a href="catalogo.html">Catálogo</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="contacto.html">Contacto</a>
-      <a href="login.html">Login</a>
+      <span id="zonaUsuario"><a href="login.html" class="boton">Ingresar</a></span>
     </nav>
   </header>
 
   <main>
     <section class="catalogo">
       <h2>Nuestro Catálogo</h2>
-      <div class="tarjetas">
-        <article class="tarjeta">
-          <img src="img/suculenta.jpg" alt="Suculenta">
-          <h3>Suculenta</h3>
-          <p>Precio: $2500</p>
-        </article>
-        <article class="tarjeta">
-          <img src="img/helecho.jpg" alt="Helecho">
-          <h3>Helecho</h3>
-          <p>Precio: $3200</p>
-        </article>
-        <article class="tarjeta">
-          <img src="img/cactus.jpg" alt="Cactus">
-          <h3>Cactus</h3>
-          <p>Precio: $1800</p>
-        </article>
-        <article class="tarjeta">
-          <img src="img/rosa.jpg" alt="Rosa">
-          <h3>Rosa</h3>
-          <p>Precio: $2900</p>
-        </article>
-        <article class="tarjeta">
-          <img src="img/bonsai.jpg" alt="Bonsái">
-          <h3>Bonsái</h3>
-          <p>Precio: $5400</p>
-        </article>
-        <article class="tarjeta">
-          <img src="img/orquidea.jpg" alt="Orquídea">
-          <h3>Orquídea</h3>
-          <p>Precio: $4100</p>
-        </article>
+      <div class="filtros">
+        <div>
+          <label for="buscador">Buscar por nombre</label>
+          <input type="text" id="buscador" placeholder="Ej: cactus">
+        </div>
+        <div>
+          <label for="filtroCategoria">Categoría</label>
+          <select id="filtroCategoria">
+            <option value="">Todas</option>
+            <option value="interior">Interior</option>
+            <option value="exterior">Exterior</option>
+            <option value="suculenta">Suculenta</option>
+            <option value="aromática">Aromática</option>
+          </select>
+        </div>
+        <div>
+          <label for="ordenar">Ordenar por</label>
+          <select id="ordenar">
+            <option value="">Sin orden</option>
+            <option value="precio-menor">Precio: menor a mayor</option>
+            <option value="precio-mayor">Precio: mayor a menor</option>
+            <option value="nombre">Nombre (A-Z)</option>
+          </select>
+        </div>
+        <button type="button" class="boton" id="limpiar">Limpiar filtros</button>
       </div>
+
+      <p id="estado"></p>
+      <p id="contador"></p>
+      <p id="sinResultados" class="mensaje-error">No encontramos plantas con ese criterio.</p>
+
+      <div class="tarjetas" id="listaPlantas"></div>
     </section>
   </main>
 
   <footer class="footer">
     <p>Vivero Raíz &copy; 2026</p>
   </footer>
+
+  <script src="js/sesion.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/datos.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/catalogo.js"></script>
 </body>
 </html>

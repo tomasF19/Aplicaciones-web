@@ -9,24 +9,27 @@
 <body>
   <header class="header">
     <h1>Vivero Raíz</h1>
-    <nav class="nav">
+    <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú">&#9776;</button>
+    <nav class="nav" id="menu">
       <a href="index.html">Home</a>
       <a href="catalogo.html">Catálogo</a>
       <a href="nosotros.html">Nosotros</a>
       <a href="contacto.html">Contacto</a>
-      <a href="login.html">Login</a>
+      <span id="zonaUsuario"><a href="login.html" class="boton">Ingresar</a></span>
     </nav>
   </header>
 
   <main>
     <section class="contacto">
       <h2>Contáctanos</h2>
-      <form>
+      <form id="formContacto" novalidate>
+        <div id="errores" class="mensaje-error"></div>
+
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre">
 
         <label for="correo">Correo:</label>
-        <input type="text" id="correo" name="correo">
+        <input type="email" id="correo" name="correo">
 
         <label for="telefono">Teléfono:</label>
         <input type="text" id="telefono" name="telefono">
@@ -54,5 +57,9 @@
   <footer class="footer">
     <p>Vivero Raíz &copy; 2026</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="js/sesion.js"></script>
+  <script src="js/validaciones.js"></script>
 </body>
 </html>
