@@ -19,9 +19,15 @@ body {
   font-family: Arial, sans-serif;
   color: var(--gris-texto);
   background-color: var(--fondo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
+/* main ocupa el espacio libre y empuja el footer al final de la pantalla */
 main {
+  flex: 1;
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
 }
